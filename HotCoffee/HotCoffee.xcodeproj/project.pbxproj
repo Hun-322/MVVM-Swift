@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5412BFAD2A0023C800759415 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412BFAC2A0023C800759415 /* WebService.swift */; };
+		5412BFB02A0029D900759415 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412BFAF2A0029D900759415 /* Order.swift */; };
 		54ED044629FFE53300319984 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ED044529FFE53300319984 /* AppDelegate.swift */; };
 		54ED044829FFE53300319984 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ED044729FFE53300319984 /* SceneDelegate.swift */; };
 		54ED044D29FFE53300319984 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54ED044B29FFE53300319984 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		5412BFAC2A0023C800759415 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		5412BFAF2A0029D900759415 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		54ED044229FFE53300319984 /* HotCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54ED044529FFE53300319984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54ED044729FFE53300319984 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		5412BFAE2A0029CA00759415 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5412BFAF2A0029D900759415 /* Order.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		54ED043929FFE53300319984 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +78,7 @@
 		54ED044429FFE53300319984 /* HotCoffee */ = {
 			isa = PBXGroup;
 			children = (
+				5412BFAE2A0029CA00759415 /* Models */,
 				5412BFAB2A0023B900759415 /* Services */,
 				54ED045929FFE5C800319984 /* Controllers */,
 				54ED044529FFE53300319984 /* AppDelegate.swift */,
@@ -160,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5412BFB02A0029D900759415 /* Order.swift in Sources */,
 				54ED044629FFE53300319984 /* AppDelegate.swift in Sources */,
 				54ED045D29FFE75500319984 /* AddOrderNewController.swift in Sources */,
 				54ED044829FFE53300319984 /* SceneDelegate.swift in Sources */,
