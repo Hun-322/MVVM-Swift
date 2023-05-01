@@ -51,10 +51,65 @@
                     <view key="view" contentMode="scaleToFill" id="pwg-te-eR0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pVW-o0-b7j">
+                                <rect key="frame" x="0.0" y="56" width="393" height="391.66666666666669"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="f6P-mM-ppx">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f6P-mM-ppx" id="46j-JF-h5o">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DGD-fc-PPY">
+                                <rect key="frame" x="93.666666666666686" y="485" width="206" height="32"/>
+                                <segments>
+                                    <segment title="Small"/>
+                                    <segment title="Medium"/>
+                                    <segment title="Large"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U31-pe-R5L">
+                                <rect key="frame" x="96.666666666666686" y="563" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="m09-bX-9Fl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7T6-Gc-gHT">
+                                <rect key="frame" x="96.666666666666686" y="605" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="cXa-aG-6O1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="wwI-C9-xkL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="U31-pe-R5L" firstAttribute="top" secondItem="DGD-fc-PPY" secondAttribute="bottom" constant="47" id="1Gb-e3-dPX"/>
+                            <constraint firstItem="DGD-fc-PPY" firstAttribute="top" secondItem="pVW-o0-b7j" secondAttribute="bottom" constant="37.333333333333314" id="CiM-4n-zLw"/>
+                            <constraint firstItem="pVW-o0-b7j" firstAttribute="height" secondItem="pwg-te-eR0" secondAttribute="height" multiplier="0.5" id="J2F-NG-Tlz"/>
+                            <constraint firstItem="DGD-fc-PPY" firstAttribute="centerX" secondItem="pwg-te-eR0" secondAttribute="centerX" id="Jme-3P-hAU"/>
+                            <constraint firstItem="7T6-Gc-gHT" firstAttribute="centerX" secondItem="pwg-te-eR0" secondAttribute="centerX" id="QVL-fy-NqH"/>
+                            <constraint firstItem="pVW-o0-b7j" firstAttribute="leading" secondItem="wwI-C9-xkL" secondAttribute="leading" id="RXJ-vk-WFx"/>
+                            <constraint firstItem="pVW-o0-b7j" firstAttribute="width" secondItem="pwg-te-eR0" secondAttribute="width" id="UND-ao-G4o"/>
+                            <constraint firstItem="pVW-o0-b7j" firstAttribute="top" secondItem="wwI-C9-xkL" secondAttribute="top" id="fZt-sA-NFU"/>
+                            <constraint firstItem="7T6-Gc-gHT" firstAttribute="top" secondItem="U31-pe-R5L" secondAttribute="bottom" constant="8" symbolic="YES" id="q2w-43-Vf9"/>
+                            <constraint firstItem="U31-pe-R5L" firstAttribute="centerX" secondItem="pwg-te-eR0" secondAttribute="centerX" id="xqI-Ax-5WH"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add New Order" id="AL5-cO-1To"/>
+                    <navigationItem key="navigationItem" title="Add New Order" id="AL5-cO-1To">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="M3T-Q5-eEd"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="WCx-Ph-cn8"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oPz-9I-PYV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
