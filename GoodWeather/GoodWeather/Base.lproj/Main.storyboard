@@ -18,13 +18,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bnI-gc-vHU">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherCell" rowHeight="100" id="bnI-gc-vHU" customClass="WeatherCell" customModule="GoodWeather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bnI-gc-vHU" id="HmS-ry-kdc">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ir-zf-fkF">
+                                            <rect key="frame" x="20" y="40" width="52" height="27"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNp-py-Z0a">
+                                            <rect key="frame" x="297" y="31" width="76" height="39"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                            <color key="textColor" red="0.58039218189999997" green="0.58431375029999999" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3ir-zf-fkF" firstAttribute="top" secondItem="HmS-ry-kdc" secondAttribute="top" constant="40" id="6iy-oo-AHZ"/>
+                                        <constraint firstItem="3ir-zf-fkF" firstAttribute="leading" secondItem="HmS-ry-kdc" secondAttribute="leading" constant="20" symbolic="YES" id="PrH-qV-Kl4"/>
+                                        <constraint firstAttribute="trailing" secondItem="kNp-py-Z0a" secondAttribute="trailing" constant="20" symbolic="YES" id="nGE-w5-qjY"/>
+                                        <constraint firstItem="kNp-py-Z0a" firstAttribute="top" secondItem="HmS-ry-kdc" secondAttribute="top" constant="31" id="qnp-Qc-UVg"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cityNameLabel" destination="3ir-zf-fkF" id="7I7-yB-uHs"/>
+                                    <outlet property="temperatureLabel" destination="kNp-py-Z0a" id="b2V-7R-Y8R"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -52,14 +76,49 @@
                     <view key="view" contentMode="scaleToFill" id="yJ5-q7-hfi">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xhh-Zi-Da4">
+                                <rect key="frame" x="20" y="96" width="353" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYX-EZ-Bil">
+                                <rect key="frame" x="166" y="160" width="61" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="92E-MP-Wuc"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                <connections>
+                                    <action selector="saveCityButtonPressed" destination="XBp-XL-onO" eventType="touchUpInside" id="0yq-Dl-koQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="MsC-Yl-CVY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MsC-Yl-CVY" firstAttribute="trailing" secondItem="AYX-EZ-Bil" secondAttribute="trailing" constant="166" id="6i8-KR-0Gh"/>
+                            <constraint firstItem="xhh-Zi-Da4" firstAttribute="leading" secondItem="MsC-Yl-CVY" secondAttribute="leading" constant="20" id="CYJ-uY-fLn"/>
+                            <constraint firstItem="xhh-Zi-Da4" firstAttribute="top" secondItem="MsC-Yl-CVY" secondAttribute="top" constant="40" id="bES-G3-glN"/>
+                            <constraint firstItem="MsC-Yl-CVY" firstAttribute="trailing" secondItem="xhh-Zi-Da4" secondAttribute="trailing" constant="20" id="eCk-s7-CI2"/>
+                            <constraint firstItem="AYX-EZ-Bil" firstAttribute="top" secondItem="xhh-Zi-Da4" secondAttribute="bottom" constant="30" id="pdt-lc-6g4"/>
+                            <constraint firstItem="AYX-EZ-Bil" firstAttribute="leading" secondItem="MsC-Yl-CVY" secondAttribute="leading" constant="166" id="wQw-Zp-tU0"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add City" id="TRP-u8-8SC"/>
+                    <navigationItem key="navigationItem" title="Add City" id="TRP-u8-8SC">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="9gD-Aj-LsE">
+                            <connections>
+                                <action selector="close" destination="XBp-XL-onO" id="7Sz-wN-XVI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cityNameTextField" destination="xhh-Zi-Da4" id="wxQ-fT-uGx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HdY-OU-tbr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2497" y="-73"/>
+            <point key="canvasLocation" x="2496.9465648854962" y="-73.239436619718319"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2JM-Ln-0tA">
