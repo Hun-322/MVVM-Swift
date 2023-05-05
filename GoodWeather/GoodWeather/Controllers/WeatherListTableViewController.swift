@@ -14,17 +14,6 @@ class WeatherListTableViewController: UITableViewController, AddWeatehrDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let resource = Resoucre<WeatherResponse>(url: URL(string: "")!) { data in
-            
-            return try? JSONDecoder().decode(WeatherResponse.self, from: data)
-        }
-        
-        WebService().laod(resource: resource) { weatherResponse in
-            if let weatherResponse = weatherResponse {
-                print(weatherResponse)
-            }
-        }
     }
     
     func addWeatherDidSave(vm: WeatherViewModel) {
