@@ -8,11 +8,8 @@
 import Foundation
 
 struct WeatherResponse: Codable {
-    let list: [List]
-    
-    struct List: Codable {
-        let main: Weather
-    }
+    let main: Weather
+    let name: String
     
     struct Weather: Codable {
         let temp: Double

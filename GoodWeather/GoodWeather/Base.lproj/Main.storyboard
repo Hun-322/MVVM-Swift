@@ -60,7 +60,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="Vnk-5d-HG8"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4gD-G8-3NS">
                             <connections>
-                                <segue destination="VcV-Fr-2tD" kind="presentation" id="Dnp-Wh-s98"/>
+                                <segue destination="VcV-Fr-2tD" kind="presentation" identifier="AddWeatherCityViewController" id="Dnp-Wh-s98"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
